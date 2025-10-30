@@ -3,6 +3,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
 
 public class Inicio extends JFrame {
 
@@ -34,6 +35,9 @@ public class Inicio extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(10, 5, 5, 5));
 		setContentPane(contentPane);
+		
+		JLabel lblNewLabel = new JLabel("Almingo");
+		contentPane.add(lblNewLabel);
 
 	}
 
