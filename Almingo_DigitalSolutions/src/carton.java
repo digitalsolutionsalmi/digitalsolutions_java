@@ -9,6 +9,7 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import javax.swing.JSeparator;
 
 public class carton extends JFrame {
 
@@ -50,7 +51,7 @@ public class carton extends JFrame {
 		
 		JPanel panel_1 = new JPanel();
 		contentPane.add(panel_1);
-		panel_1.setLayout(new GridLayout(3, 0, 0, 0));
+		panel_1.setLayout(new GridLayout(3, 8, 0, 0));
 		
 		JButton btnNewButton_1 = new JButton("New button");
 		panel_1.add(btnNewButton_1);
