@@ -61,9 +61,9 @@ public class anfitrion extends JFrame {
 		contentPane.add(panel_1);
 		panel_1.setLayout(new GridLayout(15, 6, 0, 0));
 		
-		Label label = new Label("1");
-		label.setAlignment(Label.CENTER);
-		panel_1.add(label);
+		Label label1 = new Label("1");
+		label1.setAlignment(Label.CENTER);
+		panel_1.add(label1);
 		Label label2 = new Label("2");
 		label2.setAlignment(Label.CENTER);
 		panel_1.add(label2);
