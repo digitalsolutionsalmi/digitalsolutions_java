@@ -38,7 +38,7 @@ public class anfitrion extends JFrame {
 	 * Create the frame.
 	 */
 	public anfitrion() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Dam1\\eclipse-workspace\\digitalsolutions_java\\Almingo_DigitalSolutions\\imagenes\\anfitrion.jpg"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(".\\imagenes\\anfitrion.jpg"));
 		setTitle("ALMINGO - ANFITRION");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1064, 576);
@@ -52,7 +52,7 @@ public class anfitrion extends JFrame {
 		panel.setLayout(new GridLayout(1, 0, 0, 0));
 		
 		JButton btnNewButton = new JButton("");
-		btnNewButton.setIcon(new ImageIcon("/C:/Users/Dam1/eclipse-workspace/digitalsolutions_java/Almingo_DigitalSolutions/imagenes/bola.png"));
+		btnNewButton.setIcon(new ImageIcon("./imagenes/bola.png"));
 		panel.add(btnNewButton);
 		
 		JPanel panel_1 = new JPanel();

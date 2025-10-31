@@ -37,7 +37,7 @@ public class Inicio extends JFrame {
 	 * Create the frame.
 	 */
 	public Inicio() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Dam1\\eclipse-workspace\\digitalsolutions_java\\Almingo_DigitalSolutions\\imagenes\\logo.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(".\\imagenes\\logo.png"));
 		setResizable(false);
 		setTitle("Almingo");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
