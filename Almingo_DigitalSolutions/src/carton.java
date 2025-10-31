@@ -51,7 +51,7 @@ public class carton extends JFrame {
 		
 		JPanel panel_1 = new JPanel();
 		contentPane.add(panel_1);
-		panel_1.setLayout(new GridLayout(3, 8, 0, 0));
+		panel_1.setLayout(new GridLayout(0, 9, 0, 0));
 		
 		JButton btnNewButton_1 = new JButton("New button");
 		panel_1.add(btnNewButton_1);
@@ -124,6 +124,15 @@ public class carton extends JFrame {
 		
 		JButton btnNewButton_17 = new JButton("New button");
 		panel_1.add(btnNewButton_17);
+		
+		JButton btnNewButton_28 = new JButton("New button");
+		panel_1.add(btnNewButton_28);
+		
+		JButton btnNewButton_29 = new JButton("New button");
+		panel_1.add(btnNewButton_29);
+		
+		JButton btnNewButton_30 = new JButton("New button");
+		panel_1.add(btnNewButton_30);
 		
 		JPanel panel_2 = new JPanel();
 		contentPane.add(panel_2);

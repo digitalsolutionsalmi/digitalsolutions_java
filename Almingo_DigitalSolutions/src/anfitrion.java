@@ -57,7 +57,7 @@ public class anfitrion extends JFrame {
 		
 		JPanel panel_1 = new JPanel();
 		contentPane.add(panel_1);
-		panel_1.setLayout(new GridLayout(1, 0, 0, 0));
+		panel_1.setLayout(new GridLayout(15, 6, 0, 0));
 		
 	}
 
