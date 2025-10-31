@@ -37,7 +37,7 @@ public class carton extends JFrame {
 	 */
 	public carton() {
 		setResizable(false);
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Dam1\\Downloads\\logo.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Dam1\\eclipse-workspace\\digitalsolutions_java\\Almingo_DigitalSolutions\\imagenes\\carton.jpg"));
 		setTitle("ALMINGO");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1036, 524);

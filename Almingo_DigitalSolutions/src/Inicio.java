@@ -9,6 +9,7 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.Toolkit;
 
 public class Inicio extends JFrame {
 
@@ -36,6 +37,7 @@ public class Inicio extends JFrame {
 	 * Create the frame.
 	 */
 	public Inicio() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Dam1\\eclipse-workspace\\digitalsolutions_java\\Almingo_DigitalSolutions\\imagenes\\logo.png"));
 		setResizable(false);
 		setTitle("Almingo");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
