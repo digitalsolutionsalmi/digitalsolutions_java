@@ -7,7 +7,10 @@
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="imagenes"/>
+<<<<<<< HEAD
 	<classpathentry kind="src" path="bolasNumeradas"/>
 	<classpathentry kind="src" path="BolasBingo"/>
+=======
+>>>>>>> branch 'main' of git@github.com:digitalsolutionsalmi/digitalsolutions_java.git
 	<classpathentry kind="output" path="bin"/>
 </classpath>
