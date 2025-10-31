@@ -9,6 +9,7 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import java.awt.Font;
 
 public class carton extends JFrame {
 
@@ -39,7 +40,7 @@ public class carton extends JFrame {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Dam1\\Downloads\\logo.png"));
 		setTitle("ALMINGO");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1012, 501);
+		setBounds(100, 100, 1036, 524);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(10, 5, 5, 5));
 		setContentPane(contentPane);
@@ -50,7 +51,7 @@ public class carton extends JFrame {
 		
 		JPanel panel_1 = new JPanel();
 		contentPane.add(panel_1);
-		panel_1.setLayout(new GridLayout(3, 0, 0, 0));
+		panel_1.setLayout(new GridLayout(3, 8, 0, 0));
 		
 		JButton btnNewButton_1 = new JButton("New button");
 		panel_1.add(btnNewButton_1);
@@ -129,6 +130,8 @@ public class carton extends JFrame {
 		panel_2.setLayout(new GridLayout(1, 0, 0, 0));
 		
 		JLabel lblNewLabel = new JLabel("PREGUNTA");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_2.add(lblNewLabel);
 		
 		JPanel panel_3 = new JPanel();
@@ -136,9 +139,11 @@ public class carton extends JFrame {
 		panel_3.setLayout(new GridLayout(1, 2, 0, 0));
 		
 		JButton btnNewButton_24 = new JButton("New button");
+		btnNewButton_24.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		panel_3.add(btnNewButton_24);
 		
 		JButton btnNewButton_25 = new JButton("New button");
+		btnNewButton_25.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		panel_3.add(btnNewButton_25);
 		
 		JPanel panel_8 = new JPanel();
@@ -146,9 +151,11 @@ public class carton extends JFrame {
 		panel_8.setLayout(new GridLayout(1, 2, 0, 0));
 		
 		JButton btnNewButton_26 = new JButton("New button");
+		btnNewButton_26.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		panel_8.add(btnNewButton_26);
 		
 		JButton btnNewButton_27 = new JButton("New button");
+		btnNewButton_27.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		panel_8.add(btnNewButton_27);
 
 	}
