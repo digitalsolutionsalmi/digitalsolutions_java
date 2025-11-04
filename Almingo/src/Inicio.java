@@ -10,12 +10,16 @@ import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Inicio extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField txtNombreUsuario;
+	private JButton btnUnirsePartida;
+	private JButton btnCrearPartida;
 
 	/**
 	 * Launch the application.
@@ -46,47 +50,76 @@ public class Inicio extends JFrame {
 		contentPane.setBorder(new EmptyBorder(10, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(new GridLayout(3, 1, 0, 0));
-		
+
 		JPanel panel = new JPanel();
 		contentPane.add(panel);
 		panel.setLayout(new GridLayout(1, 0, 0, 0));
-		
+
 		JLabel lblAlmingoTitle = new JLabel("ALMINGO");
 		lblAlmingoTitle.setHorizontalAlignment(SwingConstants.CENTER);
 		lblAlmingoTitle.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		panel.add(lblAlmingoTitle);
-		
+
 		JPanel panel_1 = new JPanel();
 		contentPane.add(panel_1);
 		panel_1.setLayout(new GridLayout(2, 2, 0, 0));
-		
+
 		JLabel lblInsertaNombre = new JLabel("Inserta un nombre de usuario:");
 		lblInsertaNombre.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblInsertaNombre.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(lblInsertaNombre);
-		
+
 		txtNombreUsuario = new JTextField();
 		txtNombreUsuario.setHorizontalAlignment(SwingConstants.CENTER);
 		txtNombreUsuario.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		txtNombreUsuario.setToolTipText("");
 		panel_1.add(txtNombreUsuario);
 		txtNombreUsuario.setColumns(10);
-		
+
 		JLabel lblNewLabel_1 = new JLabel("");
 		panel_1.add(lblNewLabel_1);
-		
+
 		JPanel panel_2 = new JPanel();
 		contentPane.add(panel_2);
 		panel_2.setLayout(new GridLayout(1, 2, 150, 0));
-		
-		JButton btnUnirsePartida = new JButton("UNIRSE A LA PARTIDA");
+
+		btnUnirsePartida = new JButton("UNIRSE A LA PARTIDA");
 		btnUnirsePartida.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		panel_2.add(btnUnirsePartida);
-		
-		JButton btnCrearPartida = new JButton("CREAR PARTIDA");
+
+		btnCrearPartida = new JButton("CREAR PARTIDA");
 		btnCrearPartida.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		panel_2.add(btnCrearPartida);
 
+		registrarEventos();
 	}
+
+	public void registrarEventos() {
+		btnCrearPartida.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Anfitrion ventanaAnfitrion = new Anfitrion();
+				ventanaAnfitrion.setVisible(true);
+
+				dispose();
+
+			}
+		});
+
+		btnUnirsePartida.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Carton ventanaCarton = new Carton();
+				ventanaCarton.setVisible(true);
+
+				dispose();
+
+			}
+		});
+	}
+
+
 
 }
