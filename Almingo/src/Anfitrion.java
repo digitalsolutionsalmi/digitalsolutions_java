@@ -6,20 +6,117 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.GridLayout;
+import java.awt.Image;
+
 import javax.swing.JInternalFrame;
 import java.awt.Canvas;
 import java.awt.Choice;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JRadioButton;
-import java.awt.Label;
+import javax.swing.SwingConstants;
 
 public class Anfitrion extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+	private JButton btnSacarNum;
+	private JLabel label1;
+	private JLabel label2;
+	private JLabel label3;
+	private JLabel label4;
+	private JLabel label5;
+	private JLabel label6;
+	private JLabel label7;
+	private JLabel label8;
+	private JLabel label9;
+	private JLabel label10;
+	private JLabel label11;
+	private JLabel label12;
+	private JLabel label13;
+	private JLabel label14;
+	private JLabel label15;
+	private JLabel label16;
+	private JLabel label17;
+	private JLabel label18;
+	private JLabel label19;
+	private JLabel label20;
+	private JLabel label21;
+	private JLabel label22;
+	private JLabel label23;
+	private JLabel label24;
+	private JLabel label25;
+	private JLabel label26;
+	private JLabel label27;
+	private JLabel label28;
+	private JLabel label29;
+	private JLabel label30;
+	private JLabel label31;
+	private JLabel label32;
+	private JLabel label33;
+	private JLabel label34;
+	private JLabel label35;
+	private JLabel label36;
+	private JLabel label37;
+	private JLabel label38;
+	private JLabel label39;
+	private JLabel label40;
+	private JLabel label41;
+	private JLabel label42;
+	private JLabel label43;
+	private JLabel label44;
+	private JLabel label45;
+	private JLabel label46;
+	private JLabel label47;
+	private JLabel label48;
+	private JLabel label49;
+	private JLabel label50;
+	private JLabel label51;
+	private JLabel label52;
+	private JLabel label53;
+	private JLabel label54;
+	private JLabel label55;
+	private JLabel label56;
+	private JLabel label57;
+	private JLabel label58;
+	private JLabel label59;
+	private JLabel label60;
+	private JLabel label61;
+	private JLabel label62;
+	private JLabel label63;
+	private JLabel label64;
+	private JLabel label65;
+	private JLabel label66;
+	private JLabel label67;
+	private JLabel label68;
+	private JLabel label69;
+	private JLabel label70;
+	private JLabel label71;
+	private JLabel label72;
+	private JLabel label73;
+	private JLabel label74;
+	private JLabel label75;
+	private JLabel label76;
+	private JLabel label77;
+	private JLabel label78;
+	private JLabel label79;
+	private JLabel label80;
+	private JLabel label81;
+	private JLabel label82;
+	private JLabel label83;
+	private JLabel label84;
+	private JLabel label85;
+	private JLabel label86;
+	private JLabel label87;
+	private JLabel label88;
+	private JLabel label89;
+	private JLabel label90;
 
+	private JLabel []arrayCeldas;
 	/**
 	 * Launch the application.
 	 */
@@ -53,285 +150,512 @@ public class Anfitrion extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(new GridLayout(1, 0, 0, 0));
 		
-		JButton btnNewButton = new JButton("");
-		btnNewButton.setIcon(new ImageIcon("./imagenes/bola.png"));
-		panel.add(btnNewButton);
+		btnSacarNum = new JButton("");
+		btnSacarNum.setIcon(new ImageIcon("./imagenes/bola.png"));
+		panel.add(btnSacarNum);
 		
 		JPanel panel_1 = new JPanel();
 		contentPane.add(panel_1);
 		panel_1.setLayout(new GridLayout(15, 6, 0, 0));
 		
-		Label label1 = new Label("1");
-		label1.setAlignment(Label.CENTER);
+		label1 = new JLabel("1");
+		label1.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label1);
-		Label label2 = new Label("2");
-		label2.setAlignment(Label.CENTER);
+		
+		label2 = new JLabel("2");
+		label2.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label2);
-		Label label3 = new Label("3");
-		label3.setAlignment(Label.CENTER);
+
+		label3 = new JLabel("3");
+		label3.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label3);
-		Label label4 = new Label("4");
-		label4.setAlignment(Label.CENTER);
+
+		label4 = new JLabel("4");
+		label4.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label4);
-		Label label5 = new Label("5");
-		label5.setAlignment(Label.CENTER);
+
+		label5 = new JLabel("5");
+		label5.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label5);
-		Label label6 = new Label("6");
-		label6.setAlignment(Label.CENTER);
+
+		label6 = new JLabel("6");
+		label6.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label6);
-		Label label7 = new Label("7");
-		label7.setAlignment(Label.CENTER);
+
+		label7 = new JLabel("7");
+		label7.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label7);
-		Label label8 = new Label("8");
-		label8.setAlignment(Label.CENTER);
+
+		label8 = new JLabel("8");
+		label8.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label8);
-		Label label9 = new Label("9");
-		label9.setAlignment(Label.CENTER);
+
+		label9 = new JLabel("9");
+		label9.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label9);
-		Label label10 = new Label("10");
-		label10.setAlignment(Label.CENTER);
+
+		label10 = new JLabel("10");
+		label10.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label10);
-		Label label11 = new Label("11");
-		label11.setAlignment(Label.CENTER);
+
+		label11 = new JLabel("11");
+		label11.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label11);
-		Label label12 = new Label("12");
-		label12.setAlignment(Label.CENTER);
+
+		label12 = new JLabel("12");
+		label12.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label12);
-		Label label13 = new Label("13");
-		label13.setAlignment(Label.CENTER);
+
+		label13 = new JLabel("13");
+		label13.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label13);
-		Label label14 = new Label("14");
-		label14.setAlignment(Label.CENTER);
+
+		label14 = new JLabel("14");
+		label14.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label14);
-		Label label15 = new Label("15");
-		label15.setAlignment(Label.CENTER);
+
+		label15 = new JLabel("15");
+		label15.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label15);
-		Label label16 = new Label("16");
-		label16.setAlignment(Label.CENTER);
+
+		label16 = new JLabel("16");
+		label16.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label16);
-		Label label17 = new Label("17");
-		label17.setAlignment(Label.CENTER);
+
+		label17 = new JLabel("17");
+		label17.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label17);
-		Label label18 = new Label("18");
-		label18.setAlignment(Label.CENTER);
+
+		label18 = new JLabel("18");
+		label18.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label18);
-		Label label19 = new Label("19");
-		label19.setAlignment(Label.CENTER);
+
+		label19 = new JLabel("19");
+		label19.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label19);
-		Label label20 = new Label("20");
-		label20.setAlignment(Label.CENTER);
+
+		label20 = new JLabel("20");
+		label20.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label20);
-		Label label21 = new Label("21");
-		label21.setAlignment(Label.CENTER);
+
+		label21 = new JLabel("21");
+		label21.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label21);
-		Label label22 = new Label("22");
-		label22.setAlignment(Label.CENTER);
+
+		label22 = new JLabel("22");
+		label22.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label22);
-		Label label23 = new Label("23");
-		label23.setAlignment(Label.CENTER);
+
+		label23 = new JLabel("23");
+		label23.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label23);
-		Label label24 = new Label("24");
-		label24.setAlignment(Label.CENTER);
+
+		label24 = new JLabel("24");
+		label24.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label24);
-		Label label25 = new Label("25");
-		label25.setAlignment(Label.CENTER);
+
+		label25 = new JLabel("25");
+		label25.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label25);
-		Label label26 = new Label("26");
-		label26.setAlignment(Label.CENTER);
+
+		label26 = new JLabel("26");
+		label26.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label26);
-		Label label27 = new Label("27");
-		label27.setAlignment(Label.CENTER);
+
+		label27 = new JLabel("27");
+		label27.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label27);
-		Label label28 = new Label("28");
-		label28.setAlignment(Label.CENTER);
+
+		label28 = new JLabel("28");
+		label28.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label28);
-		Label label29 = new Label("29");
-		label29.setAlignment(Label.CENTER);
+
+		label29 = new JLabel("29");
+		label29.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label29);
-		Label label30 = new Label("30");
-		label30.setAlignment(Label.CENTER);
+
+		label30 = new JLabel("30");
+		label30.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label30);
-		Label label31 = new Label("31");
-		label31.setAlignment(Label.CENTER);
+		
+		label31 = new JLabel("31");
+		label31.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label31);
-		Label label32 = new Label("32");
-		label32.setAlignment(Label.CENTER);
+
+		label32 = new JLabel("32");
+		label32.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label32);
-		Label label33 = new Label("33");
-		label33.setAlignment(Label.CENTER);
+
+		label33 = new JLabel("33");
+		label33.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label33);
-		Label label34 = new Label("34");
-		label34.setAlignment(Label.CENTER);
+
+		label34 = new JLabel("34");
+		label34.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label34);
-		Label label35 = new Label("35");
-		label35.setAlignment(Label.CENTER);
+
+		label35 = new JLabel("35");
+		label35.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label35);
-		Label label36 = new Label("36");
-		label36.setAlignment(Label.CENTER);
+
+		label36 = new JLabel("36");
+		label36.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label36);
-		Label label37 = new Label("37");
-		label37.setAlignment(Label.CENTER);
+
+		label37 = new JLabel("37");
+		label37.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label37);
-		Label label38 = new Label("38");
-		label38.setAlignment(Label.CENTER);
+
+		label38 = new JLabel("38");
+		label38.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label38);
-		Label label39 = new Label("39");
-		label39.setAlignment(Label.CENTER);
+
+		label39 = new JLabel("39");
+		label39.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label39);
-		Label label40 = new Label("40");
-		label40.setAlignment(Label.CENTER);
+
+		label40 = new JLabel("40");
+		label40.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label40);
-		Label label41 = new Label("41");
-		label41.setAlignment(Label.CENTER);
+
+		label41 = new JLabel("41");
+		label41.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label41);
-		Label label42 = new Label("42");
-		label42.setAlignment(Label.CENTER);
+
+		label42 = new JLabel("42");
+		label42.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label42);
-		Label label43 = new Label("43");
-		label43.setAlignment(Label.CENTER);
+
+		label43 = new JLabel("43");
+		label43.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label43);
-		Label label44 = new Label("44");
-		label44.setAlignment(Label.CENTER);
+
+		label44 = new JLabel("44");
+		label44.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label44);
-		Label label45 = new Label("45");
-		label45.setAlignment(Label.CENTER);
+
+		label45 = new JLabel("45");
+		label45.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label45);
-		Label label46 = new Label("46");
-		label46.setAlignment(Label.CENTER);
+
+		label46 = new JLabel("46");
+		label46.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label46);
-		Label label47 = new Label("47");
-		label47.setAlignment(Label.CENTER);
+
+		label47 = new JLabel("47");
+		label47.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label47);
-		Label label48 = new Label("48");
-		label48.setAlignment(Label.CENTER);
+
+		label48 = new JLabel("48");
+		label48.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label48);
-		Label label49 = new Label("49");
-		label49.setAlignment(Label.CENTER);
+
+		label49 = new JLabel("49");
+		label49.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label49);
-		Label label50 = new Label("50");
-		label50.setAlignment(Label.CENTER);
+
+		label50 = new JLabel("50");
+		label50.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label50);
-		Label label51 = new Label("51");
-		label51.setAlignment(Label.CENTER);
+
+		label51 = new JLabel("51");
+		label51.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label51);
-		Label label52 = new Label("52");
-		label52.setAlignment(Label.CENTER);
+
+		label52 = new JLabel("52");
+		label52.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label52);
-		Label label53 = new Label("53");
-		label53.setAlignment(Label.CENTER);
+
+		label53 = new JLabel("53");
+		label53.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label53);
-		Label label54 = new Label("54");
-		label54.setAlignment(Label.CENTER);
+
+		label54 = new JLabel("54");
+		label54.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label54);
-		Label label55 = new Label("55");
-		label55.setAlignment(Label.CENTER);
+
+		label55 = new JLabel("55");
+		label55.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label55);
-		Label label56 = new Label("56");
-		label56.setAlignment(Label.CENTER);
+
+		label56 = new JLabel("56");
+		label56.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label56);
-		Label label57 = new Label("57");
-		label57.setAlignment(Label.CENTER);
+
+		label57 = new JLabel("57");
+		label57.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label57);
-		Label label58 = new Label("58");
-		label58.setAlignment(Label.CENTER);
+
+		label58 = new JLabel("58");
+		label58.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label58);
-		Label label59 = new Label("59");
-		label59.setAlignment(Label.CENTER);
+
+		label59 = new JLabel("59");
+		label59.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label59);
-		Label label60 = new Label("60");
-		label60.setAlignment(Label.CENTER);
+
+		label60 = new JLabel("60");
+		label60.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label60);
-		Label label61 = new Label("61");
-		label61.setAlignment(Label.CENTER);
+
+		label61 = new JLabel("61");
+		label61.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label61);
-		Label label62 = new Label("62");
-		label62.setAlignment(Label.CENTER);
+
+		label62 = new JLabel("62");
+		label62.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label62);
-		Label label63 = new Label("63");
-		label63.setAlignment(Label.CENTER);
+
+		label63 = new JLabel("63");
+		label63.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label63);
-		Label label64 = new Label("64");
-		label64.setAlignment(Label.CENTER);
+
+		label64 = new JLabel("64");
+		label64.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label64);
-		Label label65 = new Label("65");
-		label65.setAlignment(Label.CENTER);
+
+		label65 = new JLabel("65");
+		label65.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label65);
-		Label label66 = new Label("66");
-		label66.setAlignment(Label.CENTER);
+
+		label66 = new JLabel("66");
+		label66.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label66);
-		Label label67 = new Label("67");
-		label67.setAlignment(Label.CENTER);
+
+		label67 = new JLabel("67");
+		label67.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label67);
-		Label label68 = new Label("68");
-		label68.setAlignment(Label.CENTER);
+
+		label68 = new JLabel("68");
+		label68.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label68);
-		Label label69 = new Label("69");
-		label69.setAlignment(Label.CENTER);
+
+		label69 = new JLabel("69");
+		label69.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label69);
-		Label label70 = new Label("70");
-		label70.setAlignment(Label.CENTER);
+
+		label70 = new JLabel("70");
+		label70.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label70);
-		Label label71 = new Label("71");
-		label71.setAlignment(Label.CENTER);
+
+		label71 = new JLabel("71");
+		label71.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label71);
-		Label label72 = new Label("72");
-		label72.setAlignment(Label.CENTER);
+
+		label72 = new JLabel("72");
+		label72.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label72);
-		Label label73 = new Label("73");
-		label73.setAlignment(Label.CENTER);
+
+		label73 = new JLabel("73");
+		label73.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label73);
-		Label label74 = new Label("74");
-		label74.setAlignment(Label.CENTER);
+
+		label74 = new JLabel("74");
+		label74.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label74);
-		Label label75 = new Label("75");
-		label75.setAlignment(Label.CENTER);
+
+		label75 = new JLabel("75");
+		label75.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label75);
-		Label label76 = new Label("76");
-		label76.setAlignment(Label.CENTER);
+
+		label76 = new JLabel("76");
+		label76.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label76);
-		Label label77 = new Label("77");
-		label77.setAlignment(Label.CENTER);
+
+		label77 = new JLabel("77");
+		label77.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label77);
-		Label label78 = new Label("78");
-		label78.setAlignment(Label.CENTER);
+
+		label78 = new JLabel("78");
+		label78.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label78);
-		Label label79 = new Label("79");
-		label79.setAlignment(Label.CENTER);
+
+		label79 = new JLabel("79");
+		label79.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label79);
-		Label label80 = new Label("80");
-		label80.setAlignment(Label.CENTER);
+
+		label80 = new JLabel("80");
+		label80.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label80);
-		Label label81 = new Label("81");
-		label81.setAlignment(Label.CENTER);
+
+		label81 = new JLabel("81");
+		label81.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label81);
-		Label label82 = new Label("82");
-		label82.setAlignment(Label.CENTER);
+
+		label82 = new JLabel("82");
+		label82.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label82);
-		Label label83 = new Label("83");
-		label83.setAlignment(Label.CENTER);
+
+		label83 = new JLabel("83");
+		label83.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label83);
-		Label label84 = new Label("84");
-		label84.setAlignment(Label.CENTER);
+
+		label84 = new JLabel("84");
+		label84.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label84);
-		Label label85 = new Label("85");
-		label85.setAlignment(Label.CENTER);
+
+		label85 = new JLabel("85");
+		label85.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label85);
-		Label label86 = new Label("86");
-		label86.setAlignment(Label.CENTER);
+
+		label86 = new JLabel("86");
+		label86.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label86);
-		Label label87 = new Label("87");
-		label87.setAlignment(Label.CENTER);
+
+		label87 = new JLabel("87");
+		label87.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label87);
-		Label label88 = new Label("88");
-		label88.setAlignment(Label.CENTER);
+
+		label88 = new JLabel("88");
+		label88.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label88);
-		Label label89 = new Label("89");
-		label89.setAlignment(Label.CENTER);
+
+		label89 = new JLabel("89");
+		label89.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label89);
-		Label label90 = new Label("90");
-		label90.setAlignment(Label.CENTER);
+
+		label90 = new JLabel("90");
+		label90.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label90);
 		
+		arrayCeldas = new JLabel[90];
+		
+		
+		celdas(arrayCeldas);
+		funciones();
+		
 	}
+	
+	public void funciones() {
+		btnSacarNum.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int num_aleatorio = 0;
+				do {
+					num_aleatorio = (int)(Math.random()*90 +1);
+				}while(arrayCeldas[num_aleatorio-1].getText() == null);
+				
+				String img_bola = "./BolasBingo/"+num_aleatorio+".png";
+				
+				try {
+					Thread.sleep(500);
+				} catch (InterruptedException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+				ImageIcon icono = new ImageIcon(img_bola);
+				Image imagen = icono.getImage();
+				Image imagenEscalada = imagen.getScaledInstance(37, 37, Image.SCALE_SMOOTH);
+		        ImageIcon iconoFinal = new ImageIcon(imagenEscalada);
+		        
+				arrayCeldas[num_aleatorio-1].setText(null);
+				arrayCeldas[num_aleatorio-1].setIcon(iconoFinal);
+				
+				
+				
+			}
+		});
+	}
+	
+	private void celdas(JLabel []arrayCeldas) {
+		arrayCeldas[0] = label1;
+		arrayCeldas[1] = label2;
+		arrayCeldas[2] = label3;
+		arrayCeldas[3] = label4;
+		arrayCeldas[4] = label5;
+		arrayCeldas[5] = label6;
+		arrayCeldas[6] = label7;
+		arrayCeldas[7] = label8;
+		arrayCeldas[8] = label9;
+		arrayCeldas[9] = label10;
+		arrayCeldas[10] = label11;
+		arrayCeldas[11] = label12;
+		arrayCeldas[12] = label13;
+		arrayCeldas[13] = label14;
+		arrayCeldas[14] = label15;
+		arrayCeldas[15] = label16;
+		arrayCeldas[16] = label17;
+		arrayCeldas[17] = label18;
+		arrayCeldas[18] = label19;
+		arrayCeldas[19] = label20;
+		arrayCeldas[20] = label21;
+		arrayCeldas[21] = label22;
+		arrayCeldas[22] = label23;
+		arrayCeldas[23] = label24;
+		arrayCeldas[24] = label25;
+		arrayCeldas[25] = label26;
+		arrayCeldas[26] = label27;
+		arrayCeldas[27] = label28;
+		arrayCeldas[28] = label29;
+		arrayCeldas[29] = label30;
+		arrayCeldas[30] = label31;
+		arrayCeldas[31] = label32;
+		arrayCeldas[32] = label33;
+		arrayCeldas[33] = label34;
+		arrayCeldas[34] = label35;
+		arrayCeldas[35] = label36;
+		arrayCeldas[36] = label37;
+		arrayCeldas[37] = label38;
+		arrayCeldas[38] = label39;
+		arrayCeldas[39] = label40;
+		arrayCeldas[40] = label41;
+		arrayCeldas[41] = label42;
+		arrayCeldas[42] = label43;
+		arrayCeldas[43] = label44;
+		arrayCeldas[44] = label45;
+		arrayCeldas[45] = label46;
+		arrayCeldas[46] = label47;
+		arrayCeldas[47] = label48;
+		arrayCeldas[48] = label49;
+		arrayCeldas[49] = label50;
+		arrayCeldas[50] = label51;
+		arrayCeldas[51] = label52;
+		arrayCeldas[52] = label53;
+		arrayCeldas[53] = label54;
+		arrayCeldas[54] = label55;
+		arrayCeldas[55] = label56;
+		arrayCeldas[56] = label57;
+		arrayCeldas[57] = label58;
+		arrayCeldas[58] = label59;
+		arrayCeldas[59] = label60;
+		arrayCeldas[60] = label61;
+		arrayCeldas[61] = label62;
+		arrayCeldas[62] = label63;
+		arrayCeldas[63] = label64;
+		arrayCeldas[64] = label65;
+		arrayCeldas[65] = label66;
+		arrayCeldas[66] = label67;
+		arrayCeldas[67] = label68;
+		arrayCeldas[68] = label69;
+		arrayCeldas[69] = label70;
+		arrayCeldas[70] = label71;
+		arrayCeldas[71] = label72;
+		arrayCeldas[72] = label73;
+		arrayCeldas[73] = label74;
+		arrayCeldas[74] = label75;
+		arrayCeldas[75] = label76;
+		arrayCeldas[76] = label77;
+		arrayCeldas[77] = label78;
+		arrayCeldas[78] = label79;
+		arrayCeldas[79] = label80;
+		arrayCeldas[80] = label81;
+		arrayCeldas[81] = label82;
+		arrayCeldas[82] = label83;
+		arrayCeldas[83] = label84;
+		arrayCeldas[84] = label85;
+		arrayCeldas[85] = label86;
+		arrayCeldas[86] = label87;
+		arrayCeldas[87] = label88;
+		arrayCeldas[88] = label89;
+		arrayCeldas[89] = label90;
+		
+		
+	}
+	
+	
+
+	
 
 }
