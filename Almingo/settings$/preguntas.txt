@@ -1,0 +1,119 @@
+1. Si hablamos de desarrollo sostenible...
+Nos estamos refiriendo exclusivamente a la protección del medioambiente
+Es la manera de solucionar problemas actuales sin tener en cuenta el futuro
+- Pasa a ser el gran reto social del ciudadano global
+Es un aspecto en el que solo tienen que actuar las instituciones públicas
+
+2. Los objetivos de desarrollo sostenible:
+Se promulgaron en el Acuerdo de París
+Son meras intenciones por parte de los países firmantes sin regulación normativa
+Son los llamados ODS e incluyen 19 metas
+- Fueron aprobados por la ONU e incluidos en la Agenda 2030
+
+3. Señala la respuesta correcta:
+El ODS 1 incluye metas que versan sobre la salud y el bienestar
+- El objetivo principal del ODS 6 es el de garantizar la disponibilidad y la gestión sostenible del agua
+No existe ningún ODS que trate el trabajo decente y el Crecimiento económico
+Ninguna respuesta es correcta
+
+4. Relacionado con las 5P del desarrollo sostenible:
+Comprenden desafíos referentes a las personas, el planeta, la prosperidad, la paz y la participación
+Sirven para observar los progresos y la manera en que influyen los ODS
+Son parámetros interdependientes con la finalidad de promover sinergias entre ellas
+- Todas las respuestas son correctas
+
+5. Cuando hablamos de criterios ASG...
+- Nos referimos a criterios ambientales, sociales y de gobernanza
+Las empresas los suelen poner en práctica de forma independiente
+Las decisiones que se tomen al aplicarlas solo tienen un efecto local
+Todas las respuestas son correctas
+
+6. El actual cambio climático... 
+- Es de origen antropogénico
+Se está produciendo de forma lenta
+Es de origen natural
+Ninguna respuesta es correcta
+
+7. ¿Cuál de las siguientes actividades es responsable del cambio climático?
+Turismo sostenible
+Energías renovable
+- Deforestación
+Todas las respuestas son correctas
+
+8. Señala la respuesta correcta:
+La pérdida de biodiversidad tiene un impacto en la salud humana
+Una de las consecuencias de la deforestación es la erosión del suelo
+El modelo de producción y consumo actual es responsable de la sobreexplotación de recursos naturales
+- Todas las respuestas son correctas
+
+9. El estrés hídrico....
+- Está relacionado con la escasez de agua
+Hace referencia a la ansiedad laboral
+Se produce sólo en los países pobres
+Se produce solo en verano
+
+10. Contribuye a lograr un modelo de producción y consumo sostenible...
+- Evitar el desperdicio alimentario
+Utilizar envases de plástico
+Ofrecer salarios bajos
+Impulsar el turismo de masas
+
+11. Los Objetivos de Desarrollo Sostenible (ODS) de la ONU abordan:
+- Sostenibilidad ambiental, social y económica
+Sostenibilidad social y económica
+Sostenibilidad ambiental y económica
+Sostenibilidad ambiental y social
+
+12. ¿El mundo está en camino de alcanzar los objetivos de Desarrollo Sostenible (ODS) de la ONU para 2030?
+Verdadero
+- Falso
+.
+.
+
+13. ¿Cual es una limitación de los ODS de la onu?
+- No apoyan un enfoque sistemático que relacione ambiente, sociedad y economía
+El lenguaje común facilita políticas entre gobiernos y empresas
+Usan datos cuantitativos para medir y reportar avances
+Los objetivos, metas e indicadores se aplican a todos los países
+
+14.  El modelo de economía circular busca reducir la extracción de recursos y promover el uso eficiente de los materiales.
+- Verdadero
+Falso
+.
+.
+
+15. ¿Cuál es el principal gas de efecto invernadero asociado al consumo energético de los centros de datos?
+Metano
+- Dióxido de carbono (CO 2)
+Óxido nitroso
+Ozono
+
+16. ¿Qué práctica busca extender la vida útil del hardware y reducir la generación de residuos electrónicos?
+Producción masiva
+Reciclaje químico
+- Economía circular
+Economía lineal
+
+17. ¿Cómo se denomina la medida del consumo eléctrico de un centro de datos en relación con la energía total que recibe?
+- PUE (Power Usage Effectiveness)
+KPI
+ROI
+CO 2 Index
+
+18. ¿Cuál es el término para la desmaterialización de productos o servicios?
+Digitalización
+Reindustrialización
+Reforestación
+- Descarbonización
+
+19. ¿Cuál es uno de los mayores desafíos ambientales del Blockchain y las criptomonedas?
+Bajo costo computacional
+Reducción de emisiones
+- Alto consumo energético
+Eliminación de residuos
+
+20. ¿Qué tecnología puede contribuir a optimizar el consumo energético en los centros de datos mediante automatización inteligente?
+Impresión 3D
+- Inteligencia Artificial (IA)
+Realidad Aumentada
+Big Data sin control energético

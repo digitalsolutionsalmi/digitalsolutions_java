@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -5,15 +6,18 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import java.util.List;
-
+import java.util.Scanner;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import java.awt.Font;
 
@@ -49,13 +53,17 @@ public class Carton extends JFrame {
 	private JButton btn38;
 	private JButton btn39;
 	private JLabel lblPregunta;
+	private JButton btnOp0;
 	private JButton btnOp1;
 	private JButton btnOp2;
 	private JButton btnOp3;
-	private JButton btnOp4;
 	
 	private JButton [][]arrayCarton;
 	private List<Integer> lista_nums = new ArrayList<>();
+	private String resp_correct;
+	private JButton []arrayRespuestas;
+	private JPanel panel_4;
+	private JPanel panel_3;
 
 	/**
 	 * Launch the application.
@@ -198,42 +206,44 @@ public class Carton extends JFrame {
 		panel_2.setLayout(new GridLayout(1, 0, 0, 0));
 		
 		lblPregunta = new JLabel("PREGUNTA");
-		lblPregunta.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblPregunta.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lblPregunta.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_2.add(lblPregunta);
 		lblPregunta.setVisible(false);
 		
-		JPanel panel_3 = new JPanel();
+		panel_3 = new JPanel();
 		contentPane.add(panel_3);
 		panel_3.setLayout(new GridLayout(1, 2, 0, 0));
 		panel_3.setVisible(false);
 		
-		btnOp1 = new JButton("New button");
+		btnOp0 = new JButton("1");
+		btnOp0.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		panel_3.add(btnOp0);
+		
+		
+		btnOp1 = new JButton("2");
 		btnOp1.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		panel_3.add(btnOp1);
 		
+		panel_4 = new JPanel();
+		contentPane.add(panel_4);
+		panel_4.setLayout(new GridLayout(1, 2, 0, 0));
+		panel_4.setVisible(false);
 		
-		btnOp2 = new JButton("New button");
+		btnOp2 = new JButton("3");
 		btnOp2.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		panel_3.add(btnOp2);
+		panel_4.add(btnOp2);
 		
-		JPanel panel_8 = new JPanel();
-		contentPane.add(panel_8);
-		panel_8.setLayout(new GridLayout(1, 2, 0, 0));
-		panel_8.setVisible(false);
-		
-		btnOp3 = new JButton("New button");
+		btnOp3 = new JButton("4");
 		btnOp3.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		panel_8.add(btnOp3);
+		panel_4.add(btnOp3);
 		
-		btnOp4 = new JButton("New button");
-		btnOp4.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		panel_8.add(btnOp4);
-		
+		arrayRespuestas = new JButton[4];
+		llenar_arrayResp(arrayRespuestas);
 		
 		regiostrar_funciones();
 		
-
+		
 	}
 	
 	public void regiostrar_funciones() {
@@ -246,6 +256,21 @@ public class Carton extends JFrame {
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						//Comprobar si el número ha salido
+						Scanner scFichero;
+						try {
+							scFichero = new Scanner(new File("./settings$/settings.txt"));
+							scFichero.nextLine();
+							while(scFichero.hasNext()) {
+								String numero = scFichero.next();
+								if(numero.equals(jButton.getText())) {
+									jButton.setEnabled(false);
+								}
+							}
+							scFichero.close();
+						} catch (FileNotFoundException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
 						
 						//Comprobar si hay linea
 						boolean linea_completa = true;
@@ -256,7 +281,47 @@ public class Carton extends JFrame {
 							}
 						}
 						if(linea_completa) {
-							//
+							try {
+								scFichero = new Scanner(new File("./settings$/preguntas.txt"));
+								String pregunta_select = String.valueOf((int)(Math.random()*20+1));
+								String []respuestas;
+								respuestas = new String[4];
+								String pregunta = null;
+								while(scFichero.hasNext()){
+									if((pregunta_select+".").equals(scFichero.next())) {
+										pregunta = scFichero.nextLine();
+										for (int j = 0; j < 4; j++) {
+											String first = scFichero.next();
+											if("-".equals(first)) {
+												respuestas[j]=scFichero.nextLine();
+												resp_correct = "<html><p>"+respuestas[j]+"</p></html>";
+											}else {
+												respuestas[j]=first + scFichero.nextLine();
+											}
+										}
+									}
+								}
+								
+								lblPregunta.setText("<html><p>"+pregunta+"</p></html>");
+								lblPregunta.setVisible(true);
+								boolean check_truefalse = false;
+								for (int j = 0; j < respuestas.length; j++) {
+									arrayRespuestas[j].setText("<html><p>"+respuestas[j]+"</p></html>");
+									if(respuestas[j].equals(".")) {
+										check_truefalse = true;
+									}
+								}
+								panel_3.setVisible(true);
+								if (!check_truefalse) {
+									panel_4.setVisible(true);
+									
+								}
+															
+								
+							} catch (FileNotFoundException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
 						}
 
 						
@@ -265,7 +330,74 @@ public class Carton extends JFrame {
 					}
 				});
 			}
-			
+		}
+		
+		//COMPROBAR RESPUESTA
+		for (JButton jButtons : arrayRespuestas) {
+			jButtons.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					if(jButtons.getText().equals(resp_correct)) {
+						JOptionPane.showMessageDialog(rootPane, "!FELICIDADES!\nHas completado la linea.", "RESPUESTA CORRECTA", -1);
+						lblPregunta.setVisible(false);
+						panel_3.setVisible(false);
+						panel_4.setVisible(false);
+						
+						for (JButton[] jButtons : arrayCarton) {
+							int check = 0;
+							JButton []fila;
+							fila = new JButton[9];
+							for (int i = 0; i < jButtons.length; i++) {
+								JButton jButton = jButtons[i];
+								
+								if(!jButton.isEnabled() && jButton.getBackground().equals(new Color(238,238,238))) {
+									check++;
+									fila[i] = jButton;
+									
+								}
+							if(check == 9) {
+								for (int j = 0; j < jButtons.length; j++) {
+									JButton jButton1 = jButtons[j];
+									jButton1.setBackground(Color.GREEN);
+								}
+									
+							}
+							}
+								
+						}
+					}else {
+						JOptionPane.showMessageDialog(rootPane, resp_correct, "RESPUESTA INCORRECTA", 0);
+						lblPregunta.setVisible(false);
+						panel_3.setVisible(false);
+						panel_4.setVisible(false);
+						
+						for (JButton[] jButtons : arrayCarton) {
+							int check = 0;
+							JButton []fila;
+							fila = new JButton[9];
+							for (int i = 0; i < jButtons.length; i++) {
+								JButton jButton = jButtons[i];
+								
+								if(!jButton.isEnabled() && jButton.getBackground().equals(new Color(238,238,238))) {
+									check++;
+									fila[i] = jButton;
+									
+								}
+							if(check == 9) {
+								for (int j = 0; j < jButtons.length; j++) {
+									JButton jButton1 = jButtons[j];
+									jButton1.setBackground(Color.RED);
+								}
+									
+							}
+							}
+								
+						}
+						
+					}
+					
+				}
+			});
 		}
 		
 		
@@ -302,6 +434,15 @@ public class Carton extends JFrame {
 		arrayCarton[2][7] = btn38;
 		arrayCarton[2][8] = btn39;
 
+		
+	}
+	
+	private void llenar_arrayResp(JButton []arrayRespuestas) {
+		arrayRespuestas[0]=btnOp0;
+		arrayRespuestas[1]=btnOp1;
+		arrayRespuestas[2]=btnOp2;
+		arrayRespuestas[3]=btnOp3;
+		
 		
 	}
 	
