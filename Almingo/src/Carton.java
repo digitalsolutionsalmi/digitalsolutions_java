@@ -64,6 +64,7 @@ public class Carton extends JFrame {
 	private JButton []arrayRespuestas;
 	private JPanel panel_4;
 	private JPanel panel_3;
+	private JLabel lblNombre;
 
 	/**
 	 * Launch the application.
@@ -97,6 +98,11 @@ public class Carton extends JFrame {
 		
 		JPanel panel = new JPanel();
 		contentPane.add(panel);
+		
+		lblNombre = new JLabel("Nombre");
+		lblNombre.setHorizontalAlignment(SwingConstants.LEFT);
+		lblNombre.setFont(new Font("Tahoma", Font.ITALIC, 15));
+		panel.add(lblNombre);
 		
 		JPanel panel_1 = new JPanel();
 		contentPane.add(panel_1);
