@@ -157,7 +157,7 @@ public class Anfitrion extends JFrame {
 		panel.setLayout(new GridLayout(1, 0, 0, 0));
 
 		btnSacarNum = new JButton("");
-		btnSacarNum.setIcon(new ImageIcon("./imagenes/bola.png"));
+		btnSacarNum.setIcon(new ImageIcon("./imagenes/gifbotonfinal.gif"));
 		panel.add(btnSacarNum);
 
 		JPanel panel_1 = new JPanel();
