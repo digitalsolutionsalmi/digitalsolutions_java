@@ -18,7 +18,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Scanner;
 
 import javax.swing.JRadioButton;
 import javax.swing.SwingConstants;
@@ -540,28 +543,38 @@ public class Anfitrion extends JFrame {
 				}while(arrayCeldas[num_aleatorio-1].getText() == null);
 
 				String img_bola = "./BolasBingo/"+num_aleatorio+".png";
-				String strFichero = "./comprobar.txt";
-
+				
+				String strarchivo="./comprobar.txt";
+				
+				Scanner leerfich;
+				
 				File fichero;
-
+				
 				PrintWriter pw;
-
-				fichero=new File(strFichero);
-
-
+				
+				fichero=new File(strarchivo);
+				
 				try {
+					leerfich=new Scanner(new File(strarchivo));
 					
-						pw=new PrintWriter(fichero);
-						pw.print(num_aleatorio);
+					if(fichero.exists()) {
+						leerfich = new Scanner(fichero); 
+				        
+				        pw = new PrintWriter(new FileWriter(fichero, true)); 
+				        strarchivo=leerfich.nextLine();
+				        
+				        pw.print(num_aleatorio + " ");
 						pw.close();
+					}
 					
 					
-
 				} catch (FileNotFoundException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
 				}
-
 
 				try {
 					Thread.sleep(500);
