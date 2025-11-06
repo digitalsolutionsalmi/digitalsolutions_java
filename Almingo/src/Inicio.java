@@ -4,6 +4,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.GridLayout;
 import java.awt.Font;
 import javax.swing.SwingConstants;
@@ -107,6 +109,8 @@ public class Inicio extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				String strarchivo="./comprobar.txt";
 				
+				Scanner scFich;
+				
 				File fichero;
 				
 				PrintWriter pw;
@@ -114,17 +118,27 @@ public class Inicio extends JFrame {
 				fichero=new File(strarchivo);
 				
 				try {
-					
 					if(fichero.exists()) {
-				        
-				        pw = new PrintWriter(new FileWriter(fichero, true)); 	
-				        pw.println("Estado: yes");
-						pw.close();
+						scFich=new Scanner(new File(strarchivo));
+						String linea = scFich.nextLine();
+						if(linea.trim().equals("Estado: yes")){
+							pw = new PrintWriter(new FileWriter(fichero, true));
+							pw.println("Estado: no");
+							pw.close();
+							Anfitrion ventanaAnfitrion = new Anfitrion();
+							ventanaAnfitrion.setVisible(true);
+
+							dispose();
+						}else {
+					        JOptionPane.showMessageDialog(null, "La partida ya esta creada", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+						}
 					}else {
 						pw = new PrintWriter(new FileWriter(fichero, true)); 			
 				        pw.println("Estado: yes");
 						pw.close();
 					}
+					
+					
 					
 					
 				} catch (FileNotFoundException e1) {
@@ -135,10 +149,7 @@ public class Inicio extends JFrame {
 					e1.printStackTrace();
 				}
 				
-				Anfitrion ventanaAnfitrion = new Anfitrion();
-				ventanaAnfitrion.setVisible(true);
-
-				dispose();
+				
 
 			}
 		});
