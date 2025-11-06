@@ -122,7 +122,7 @@ public class Inicio extends JFrame {
 						scFich=new Scanner(new File(strarchivo));
 						String linea = scFich.nextLine();
 						if(linea.trim().equals("Estado: yes")){
-							pw = new PrintWriter(new FileWriter(fichero, true));
+							pw = new PrintWriter(new FileWriter(fichero));
 							pw.println("Estado: no");
 							pw.close();
 							Anfitrion ventanaAnfitrion = new Anfitrion();
@@ -133,7 +133,7 @@ public class Inicio extends JFrame {
 					        JOptionPane.showMessageDialog(null, "La partida ya esta creada", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
 						}
 					}else {
-						pw = new PrintWriter(new FileWriter(fichero, true)); 			
+						pw = new PrintWriter(new FileWriter(fichero)); 			
 				        pw.println("Estado: yes");
 						pw.close();
 					}
