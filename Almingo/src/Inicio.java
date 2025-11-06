@@ -12,6 +12,12 @@ import javax.swing.JButton;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Scanner;
 
 public class Inicio extends JFrame {
 
@@ -99,6 +105,36 @@ public class Inicio extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				String strarchivo="./comprobar.txt";
+				
+				File fichero;
+				
+				PrintWriter pw;
+				
+				fichero=new File(strarchivo);
+				
+				try {
+					
+					if(fichero.exists()) {
+				        
+				        pw = new PrintWriter(new FileWriter(fichero, true)); 	
+				        pw.println("Estado: yes");
+						pw.close();
+					}else {
+						pw = new PrintWriter(new FileWriter(fichero, true)); 			
+				        pw.println("Estado: yes");
+						pw.close();
+					}
+					
+					
+				} catch (FileNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
 				Anfitrion ventanaAnfitrion = new Anfitrion();
 				ventanaAnfitrion.setVisible(true);
 
