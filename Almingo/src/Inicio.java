@@ -158,6 +158,8 @@ public class Inicio extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				String textoIngresado = txtNombreUsuario.getText();
+				
 				Carton ventanaCarton = new Carton();
 				ventanaCarton.setVisible(true);
 
