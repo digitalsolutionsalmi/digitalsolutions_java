@@ -16,6 +16,12 @@ import javax.swing.JButton;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Scanner;
 
 import javax.swing.JRadioButton;
 import javax.swing.SwingConstants;
@@ -145,23 +151,23 @@ public class Anfitrion extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(new GridLayout(1, 2, 0, 0));
-		
+
 		JPanel panel = new JPanel();
 		contentPane.add(panel);
 		panel.setLayout(new GridLayout(1, 0, 0, 0));
-		
+
 		btnSacarNum = new JButton("");
-		btnSacarNum.setIcon(new ImageIcon("./imagenes/bola.png"));
+		btnSacarNum.setIcon(new ImageIcon("./imagenes/gifbotonfinal.gif"));
 		panel.add(btnSacarNum);
-		
+
 		JPanel panel_1 = new JPanel();
 		contentPane.add(panel_1);
 		panel_1.setLayout(new GridLayout(15, 6, 0, 0));
-		
+
 		label1 = new JLabel("1");
 		label1.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label1);
-		
+
 		label2 = new JLabel("2");
 		label2.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label2);
@@ -277,7 +283,7 @@ public class Anfitrion extends JFrame {
 		label30 = new JLabel("30");
 		label30.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label30);
-		
+
 		label31 = new JLabel("31");
 		label31.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label31);
@@ -517,48 +523,80 @@ public class Anfitrion extends JFrame {
 		label90 = new JLabel("90");
 		label90.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(label90);
-		
+
 		arrayCeldas = new JLabel[90];
-		
-		
+
+
 		celdas(arrayCeldas);
 		funciones();
-		
+
 	}
-	
+
 	public void funciones() {
 		btnSacarNum.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				int num_aleatorio = 0;
 				do {
 					num_aleatorio = (int)(Math.random()*90 +1);
 				}while(arrayCeldas[num_aleatorio-1].getText() == null);
-				
+
 				String img_bola = "./BolasBingo/"+num_aleatorio+".png";
 				
+				String strarchivo="./comprobar.txt";
+				
+				Scanner leerfich;
+				
+				File fichero;
+				
+				PrintWriter pw;
+				
+				fichero=new File(strarchivo);
+				
+				try {
+					leerfich=new Scanner(new File(strarchivo));
+					
+					if(fichero.exists()) {
+						leerfich = new Scanner(fichero); 
+				        
+				        pw = new PrintWriter(new FileWriter(fichero, true)); 
+				        strarchivo=leerfich.nextLine();
+				        
+				        pw.print(num_aleatorio + " ");
+						pw.close();
+					}
+					
+					
+				} catch (FileNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+
 				try {
 					Thread.sleep(500);
 				} catch (InterruptedException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-				
+
 				ImageIcon icono = new ImageIcon(img_bola);
 				Image imagen = icono.getImage();
 				Image imagenEscalada = imagen.getScaledInstance(37, 37, Image.SCALE_SMOOTH);
-		        ImageIcon iconoFinal = new ImageIcon(imagenEscalada);
-		        
+				ImageIcon iconoFinal = new ImageIcon(imagenEscalada);
+
 				arrayCeldas[num_aleatorio-1].setText(null);
 				arrayCeldas[num_aleatorio-1].setIcon(iconoFinal);
-				
-				
-				
+
+
+
 			}
 		});
 	}
-	
+
 	private void celdas(JLabel []arrayCeldas) {
 		arrayCeldas[0] = label1;
 		arrayCeldas[1] = label2;
@@ -650,12 +688,12 @@ public class Anfitrion extends JFrame {
 		arrayCeldas[87] = label88;
 		arrayCeldas[88] = label89;
 		arrayCeldas[89] = label90;
-		
-		
-	}
-	
-	
 
-	
+
+	}
+
+
+
+
 
 }
