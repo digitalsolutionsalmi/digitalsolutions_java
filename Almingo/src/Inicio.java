@@ -108,7 +108,7 @@ public class Inicio extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String strarchivo="./comprobarestado.txt";
+				String strarchivo="\\\\192.168.0.28\\almingo\\comprobarestado.txt";
 				
 				Scanner scFich;
 				

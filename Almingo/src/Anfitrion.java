@@ -544,7 +544,7 @@ public class Anfitrion extends JFrame {
 
 				String img_bola = "./BolasBingo/"+num_aleatorio+".png";
 				
-				String strarchivo="./comprobarnumeros.txt";
+				String strarchivo="\\\\192.168.0.28\\almingo\\comprobarnumeros.txt";
 				
 				Scanner leerfich;
 				

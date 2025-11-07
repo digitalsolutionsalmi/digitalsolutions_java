@@ -266,8 +266,7 @@ public class Carton extends JFrame {
 						//Comprobar si el número ha salido
 						Scanner scFichero;
 						try {
-							scFichero = new Scanner(new File("./settings$/settings.txt"));
-							scFichero.nextLine();
+							scFichero = new Scanner(new File("\\\\192.168.0.28\\almingo\\comprobarnumeros.txt"));
 							while(scFichero.hasNext()) {
 								String numero = scFichero.next();
 								if(numero.equals(jButton.getText())) {
@@ -464,4 +463,5 @@ public class Carton extends JFrame {
 
 		return String.valueOf(numero);
 	}
+	
 }
