@@ -28,6 +28,7 @@ public class Inicio extends JFrame {
 	private JTextField txtNombreUsuario;
 	private JButton btnUnirsePartida;
 	private JButton btnCrearPartida;
+	public static String nombrejugador;
 
 	/**
 	 * Launch the application.
@@ -158,8 +159,8 @@ public class Inicio extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String textoIngresado = txtNombreUsuario.getText();
-				
+				String textoingresado = txtNombreUsuario.getText();
+				nombrejugador=textoingresado;
 				Carton ventanaCarton = new Carton();
 				ventanaCarton.setVisible(true);
 

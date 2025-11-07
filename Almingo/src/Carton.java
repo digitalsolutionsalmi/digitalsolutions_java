@@ -102,6 +102,7 @@ public class Carton extends JFrame {
 		lblNombre = new JLabel("Nombre");
 		lblNombre.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNombre.setFont(new Font("Tahoma", Font.ITALIC, 15));
+		lblNombre.setText(Inicio.nombrejugador);
 		panel.add(lblNombre);
 		
 
