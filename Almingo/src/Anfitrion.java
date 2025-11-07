@@ -544,7 +544,7 @@ public class Anfitrion extends JFrame {
 
 				String img_bola = "./BolasBingo/"+num_aleatorio+".png";
 				
-				String strarchivo="./comprobar.txt";
+				String strarchivo="./comprobarnumeros.txt";
 				
 				Scanner leerfich;
 				
@@ -555,13 +555,10 @@ public class Anfitrion extends JFrame {
 				fichero=new File(strarchivo);
 				
 				try {
-					leerfich=new Scanner(new File(strarchivo));
 					
 					if(fichero.exists()) {
-						leerfich = new Scanner(fichero); 
 				        
 				        pw = new PrintWriter(new FileWriter(fichero, true)); 
-				        strarchivo=leerfich.nextLine();
 				        
 				        pw.print(num_aleatorio + " ");
 						pw.close();
