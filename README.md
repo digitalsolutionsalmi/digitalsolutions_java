@@ -16,16 +16,16 @@
 
 <details><summary>Índice</summary>
 
-- [📍 Descripción](#📍-descripción)
-- [📌 Características](#📌-características)
-- [🚀 Cómo Jugar](#🚀-cómo-jugar)
-  - [🧪 Requisitos](#🧪-requisitos)
-  - [🤖 Para el Anfitrión](#🤖-para-el-anfitrión)
-  - [👾 Para los Jugadores](#👾-para-los-jugadores)
-- [📂 Detalles Técnicos](#📂-detalles-técnicos)
-- [🔰 Directrices para contribuir](#🔰-directrices-para-contribuir)
-- [🎗 Información sobre la licencia](#🎗-información-sobre-la-licencia)
-- [🙌 Agradecimientos](#🙌-agradecimientos)
+- [📍 Descripción](#-descripción)
+- [📌 Características](#-características)
+- [🚀 Cómo Jugar](#-cómo-jugar)
+  - [🧪 Requisitos](#-requisitos)
+  - [🤖 Para el Anfitrión](#-para-el-anfitrión)
+  - [👾 Para los Jugadores](#-para-los-jugadores)
+- [📂 Detalles Técnicos](#-detalles-técnicos)
+- [🔰 Directrices para contribuir](#-directrices-para-contribuir)
+- [🎗 Información sobre la licencia](#-información-sobre-la-licencia)
+- [🙌 Agradecimientos](#-agradecimientos)
 
 </details>
 <hr>
