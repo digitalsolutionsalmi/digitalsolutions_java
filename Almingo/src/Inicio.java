@@ -28,7 +28,7 @@ public class Inicio extends JFrame {
 	private JTextField txtNombreUsuario;
 	private JButton btnUnirsePartida;
 	private JButton btnCrearPartida;
-	public static String nombrejugador;
+	public static String nombrejugador = null;
 
 	/**
 	 * Launch the application.
@@ -108,7 +108,8 @@ public class Inicio extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String strarchivo="./comprobarestado.txt";
+				String strarchivo="\\\\192.168.0.28\\almingo\\comprobarestado.txt";
+				String strnumeros="\\\\192.168.0.28\\almingo\\comprobarnumeros.txt";
 				
 				Scanner scFich;
 				
@@ -126,12 +127,16 @@ public class Inicio extends JFrame {
 							pw = new PrintWriter(new FileWriter(fichero));
 							pw.println("Estado: no");
 							pw.close();
+							
+							pw = new PrintWriter(new FileWriter(new File(strnumeros)));
+							pw.close();
+							
 							Anfitrion ventanaAnfitrion = new Anfitrion();
 							ventanaAnfitrion.setVisible(true);
 
 							dispose();
 						}else {
-					        JOptionPane.showMessageDialog(null, "La partida ya esta creada", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+					        JOptionPane.showMessageDialog(rootPane, "La partida ya esta creada", "Aviso", JOptionPane.INFORMATION_MESSAGE);
 						}
 					}else {
 						pw = new PrintWriter(new FileWriter(fichero)); 			
@@ -161,11 +166,17 @@ public class Inicio extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				String textoingresado = txtNombreUsuario.getText();
 				nombrejugador=textoingresado;
-				Carton ventanaCarton = new Carton();
-				ventanaCarton.setVisible(true);
 
-				dispose();
+				if(nombrejugador.isBlank()) {
+					JOptionPane.showMessageDialog(rootPane, "Porfavor, introduce un nombre de usuario.", "Aviso", JOptionPane.WARNING_MESSAGE);
+				}else {
+					Carton ventanaCarton = new Carton();
+					ventanaCarton.setVisible(true);
 
+					dispose();
+				}
+				
+				
 			}
 		});
 	}
