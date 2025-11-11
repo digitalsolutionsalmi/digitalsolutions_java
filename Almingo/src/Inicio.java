@@ -4,6 +4,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.GridLayout;
 import java.awt.Font;
 import javax.swing.SwingConstants;
@@ -12,6 +14,12 @@ import javax.swing.JButton;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Scanner;
 
 public class Inicio extends JFrame {
 
@@ -20,6 +28,7 @@ public class Inicio extends JFrame {
 	private JTextField txtNombreUsuario;
 	private JButton btnUnirsePartida;
 	private JButton btnCrearPartida;
+	public static String nombrejugador;
 
 	/**
 	 * Launch the application.
@@ -99,10 +108,49 @@ public class Inicio extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Anfitrion ventanaAnfitrion = new Anfitrion();
-				ventanaAnfitrion.setVisible(true);
+				String strarchivo="./comprobarestado.txt";
+				
+				Scanner scFich;
+				
+				File fichero;
+				
+				PrintWriter pw;
+				
+				fichero=new File(strarchivo);
+				
+				try {
+					if(fichero.exists()) {
+						scFich=new Scanner(new File(strarchivo));
+						String linea = scFich.nextLine();
+						if(linea.trim().equals("Estado: yes")){
+							pw = new PrintWriter(new FileWriter(fichero));
+							pw.println("Estado: no");
+							pw.close();
+							Anfitrion ventanaAnfitrion = new Anfitrion();
+							ventanaAnfitrion.setVisible(true);
 
-				dispose();
+							dispose();
+						}else {
+					        JOptionPane.showMessageDialog(null, "La partida ya esta creada", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+						}
+					}else {
+						pw = new PrintWriter(new FileWriter(fichero)); 			
+				        pw.println("Estado: yes");
+						pw.close();
+					}
+					
+					
+					
+					
+				} catch (FileNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+				
 
 			}
 		});
@@ -111,6 +159,8 @@ public class Inicio extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				String textoingresado = txtNombreUsuario.getText();
+				nombrejugador=textoingresado;
 				Carton ventanaCarton = new Carton();
 				ventanaCarton.setVisible(true);
 
