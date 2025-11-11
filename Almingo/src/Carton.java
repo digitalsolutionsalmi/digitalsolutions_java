@@ -65,6 +65,8 @@ public class Carton extends JFrame {
 	private JPanel panel_4;
 	private JPanel panel_3;
 	private JLabel lblNombre;
+	private int lineas_correct = 0;
+	private int lineas_check = 0;
 
 	/**
 	 * Launch the application.
@@ -101,7 +103,7 @@ public class Carton extends JFrame {
 		
 		lblNombre = new JLabel("Nombre");
 		lblNombre.setHorizontalAlignment(SwingConstants.LEFT);
-		lblNombre.setFont(new Font("Tahoma", Font.ITALIC, 15));
+		lblNombre.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lblNombre.setText(Inicio.nombrejugador);
 		panel.add(lblNombre);
 		
@@ -204,7 +206,7 @@ public class Carton extends JFrame {
 				}while(arrayCarton[i][aleatorio].getText() == null);
 
 				arrayCarton[i][aleatorio].setText(null);
-				arrayCarton[i][aleatorio].setEnabled(false);;
+				arrayCarton[i][aleatorio].setEnabled(false);
 
 			}
 		}
@@ -255,7 +257,7 @@ public class Carton extends JFrame {
 	}
 
 	public void regiostrar_funciones() {
-
+		
 		//CARTON COMPROBAR NÚMEROS
 		for (JButton[] jButtons : arrayCarton) {
 			for (int i = 0; i < jButtons.length; i++) {
@@ -263,74 +265,78 @@ public class Carton extends JFrame {
 				jButton.addActionListener(new ActionListener() {
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						//Comprobar si el número ha salido
-						Scanner scFichero;
-						try {
-							scFichero = new Scanner(new File("./settings$/settings.txt"));
-							scFichero.nextLine();
-							while(scFichero.hasNext()) {
-								String numero = scFichero.next();
-								if(numero.equals(jButton.getText())) {
-									jButton.setEnabled(false);
-								}
-							}
-							scFichero.close();
-						} catch (FileNotFoundException e1) {
-							// TODO Auto-generated catch block
-							e1.printStackTrace();
-						}
-
-						//Comprobar si hay linea
-						boolean linea_completa = true;
-						for (int j = 0; j < jButtons.length; j++) {
-							JButton jButton = jButtons[j];
-							if(jButton.isEnabled()) {
-								linea_completa = false;
-							}
-						}
-						if(linea_completa) {
+						if(lblPregunta.isVisible()) {
+							JOptionPane.showMessageDialog(rootPane, "Debes de responder a la pregunta antes de continuar.", "¡Pegunta pendiente!", 2);
+						}else {
+							//Comprobar si el número ha salido
+							Scanner scFichero;
 							try {
-								scFichero = new Scanner(new File("./settings$/preguntas.txt"));
-								String pregunta_select = String.valueOf((int)(Math.random()*20+1));
-								String []respuestas;
-								respuestas = new String[4];
-								String pregunta = null;
-								while(scFichero.hasNext()){
-									if((pregunta_select+".").equals(scFichero.next())) {
-										pregunta = scFichero.nextLine();
-										for (int j = 0; j < 4; j++) {
-											String first = scFichero.next();
-											if("-".equals(first)) {
-												respuestas[j]=scFichero.nextLine();
-												resp_correct = "<html><p>"+respuestas[j]+"</p></html>";
-											}else {
-												respuestas[j]=first + scFichero.nextLine();
-											}
-										}
+								scFichero = new Scanner(new File("\\\\192.168.0.28\\almingo\\comprobarnumeros.txt"));
+								while(scFichero.hasNext()) {
+									String numero = scFichero.next();
+									if(numero.equals(jButton.getText())) {
+										jButton.setEnabled(false);
 									}
 								}
-
-								lblPregunta.setText("<html><p>"+pregunta+"</p></html>");
-								lblPregunta.setVisible(true);
-								boolean check_truefalse = false;
-								for (int j = 0; j < respuestas.length; j++) {
-									arrayRespuestas[j].setText("<html><p>"+respuestas[j]+"</p></html>");
-									if(respuestas[j].equals(".")) {
-										check_truefalse = true;
-									}
-								}
-								panel_3.setVisible(true);
-								if (!check_truefalse) {
-									panel_4.setVisible(true);
-
-								}
-
-
+								scFichero.close();
 							} catch (FileNotFoundException e1) {
 								// TODO Auto-generated catch block
 								e1.printStackTrace();
 							}
+	
+							//Comprobar si hay linea
+							boolean linea_completa = true;
+							for (int j = 0; j < jButtons.length; j++) {
+								JButton jButton = jButtons[j];
+								if(jButton.isEnabled()) {
+									linea_completa = false;
+								}
+							}
+							if(linea_completa) {
+								try {
+									scFichero = new Scanner(new File("./settings$/preguntas.txt"));
+									String pregunta_select = String.valueOf((int)(Math.random()*20+1));
+									String []respuestas;
+									respuestas = new String[4];
+									String pregunta = null;
+									while(scFichero.hasNext()){
+										if((pregunta_select+".").equals(scFichero.next())) {
+											pregunta = scFichero.nextLine();
+											for (int j = 0; j < 4; j++) {
+												String first = scFichero.next();
+												if("-".equals(first)) {
+													respuestas[j]=scFichero.nextLine();
+													resp_correct = "<html><p>"+respuestas[j]+"</p></html>";
+												}else {
+													respuestas[j]=first + scFichero.nextLine();
+												}
+											}
+										}
+									}
+	
+									lblPregunta.setText("<html><p>"+pregunta+"</p></html>");
+									lblPregunta.setVisible(true);
+									boolean check_truefalse = false;
+									for (int j = 0; j < respuestas.length; j++) {
+										arrayRespuestas[j].setText("<html><p>"+respuestas[j]+"</p></html>");
+										if(respuestas[j].equals(".")) {
+											check_truefalse = true;
+										}
+									}
+									panel_3.setVisible(true);
+									if (!check_truefalse) {
+										panel_4.setVisible(true);
+	
+									}
+	
+	
+								} catch (FileNotFoundException e1) {
+									// TODO Auto-generated catch block
+									e1.printStackTrace();
+								}
+							}
 						}
+						
 
 
 
@@ -345,7 +351,9 @@ public class Carton extends JFrame {
 			jButtons.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
+					lineas_check ++;
 					if(jButtons.getText().equals(resp_correct)) {
+						lineas_correct ++;
 						JOptionPane.showMessageDialog(rootPane, "!FELICIDADES!\nHas completado la linea.", "RESPUESTA CORRECTA", -1);
 						lblPregunta.setVisible(false);
 						panel_3.setVisible(false);
@@ -373,6 +381,7 @@ public class Carton extends JFrame {
 							}
 
 						}
+						
 					}else {
 						JOptionPane.showMessageDialog(rootPane, resp_correct, "RESPUESTA INCORRECTA", 0);
 						lblPregunta.setVisible(false);
@@ -402,6 +411,13 @@ public class Carton extends JFrame {
 
 						}
 
+					}
+					if(lineas_correct == 3) {
+						String message = "¡Felicidades, "+ Inicio.nombrejugador +"!\nHas demostrado ser el rey/reina del bingo.\n¡Bien jugado!";
+						JOptionPane.showMessageDialog(rootPane, message, "BINGO", 1);
+					}else if (lineas_check == 3){
+						String message = "¡Ánimo! Estuviste a punto.\nFallaste "+ (3-lineas_correct) +" preguntas, pero la suerte está de tu lado.";
+						JOptionPane.showMessageDialog(rootPane, message, "¡Bien jugado!", 3);
 					}
 
 				}
