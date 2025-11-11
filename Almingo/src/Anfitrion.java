@@ -12,10 +12,13 @@ import javax.swing.JInternalFrame;
 import java.awt.Canvas;
 import java.awt.Choice;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -592,6 +595,27 @@ public class Anfitrion extends JFrame {
 
 			}
 		});
+		
+		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+            	PrintWriter pw;
+            	String strarchivo="\\\\192.168.0.28\\almingo\\comprobarestado.txt";
+            	
+            	try {
+					pw = new PrintWriter(new FileWriter(new File(strarchivo)));
+					pw.println("Estado: yes");
+					pw.close();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} 			
+		        
+            	System.exit(0);
+                
+            }
+        });
 	}
 
 	private void celdas(JLabel []arrayCeldas) {
