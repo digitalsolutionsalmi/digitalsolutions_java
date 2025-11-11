@@ -109,6 +109,7 @@ public class Inicio extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String strarchivo="\\\\192.168.0.28\\almingo\\comprobarestado.txt";
+				String strnumeros="\\\\192.168.0.28\\almingo\\comprobarnumeros.txt";
 				
 				Scanner scFich;
 				
@@ -126,6 +127,10 @@ public class Inicio extends JFrame {
 							pw = new PrintWriter(new FileWriter(fichero));
 							pw.println("Estado: no");
 							pw.close();
+							
+							pw = new PrintWriter(new FileWriter(new File(strnumeros)));
+							pw.close();
+							
 							Anfitrion ventanaAnfitrion = new Anfitrion();
 							ventanaAnfitrion.setVisible(true);
 
