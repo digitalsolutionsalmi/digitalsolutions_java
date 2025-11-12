@@ -28,6 +28,8 @@ import java.util.Scanner;
 
 import javax.swing.JRadioButton;
 import javax.swing.SwingConstants;
+import java.awt.FlowLayout;
+import java.awt.Font;
 
 public class Anfitrion extends JFrame {
 
@@ -126,6 +128,9 @@ public class Anfitrion extends JFrame {
 	private JLabel label90;
 
 	private JLabel []arrayCeldas;
+	private JPanel panel_2;
+	private JLabel lblultimabola;
+	private JLabel lblultimabolaimg;
 	/**
 	 * Launch the application.
 	 */
@@ -157,11 +162,25 @@ public class Anfitrion extends JFrame {
 
 		JPanel panel = new JPanel();
 		contentPane.add(panel);
-		panel.setLayout(new GridLayout(1, 0, 0, 0));
+		panel.setLayout(new GridLayout(2, 0, 0, 0));
 
 		btnSacarNum = new JButton("");
 		btnSacarNum.setIcon(new ImageIcon("./imagenes/gifbotonfinal.gif"));
 		panel.add(btnSacarNum);
+		
+		panel_2 = new JPanel();
+		panel.add(panel_2);
+		panel_2.setLayout(new GridLayout(2, 0, 0, 0));
+		
+		lblultimabola = new JLabel("ULTIMA BOLA:");
+		lblultimabola.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblultimabola.setVerticalAlignment(SwingConstants.BOTTOM);
+		lblultimabola.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_2.add(lblultimabola);
+		
+		lblultimabolaimg = new JLabel("");
+		lblultimabolaimg.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_2.add(lblultimabolaimg);
 
 		JPanel panel_1 = new JPanel();
 		contentPane.add(panel_1);
