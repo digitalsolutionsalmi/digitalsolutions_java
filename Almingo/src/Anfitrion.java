@@ -131,6 +131,8 @@ public class Anfitrion extends JFrame {
 	private JPanel panel_2;
 	private JLabel lblultimabola;
 	private JLabel lblultimabolaimg;
+	private JLabel lblNewLabel;
+	private JLabel lblbolaactual;
 	/**
 	 * Launch the application.
 	 */
@@ -167,17 +169,27 @@ public class Anfitrion extends JFrame {
 		btnSacarNum = new JButton("");
 		btnSacarNum.setIcon(new ImageIcon("./imagenes/gifbotonfinal.gif"));
 		panel.add(btnSacarNum);
-		
+
 		panel_2 = new JPanel();
 		panel.add(panel_2);
-		panel_2.setLayout(new GridLayout(2, 0, 0, 0));
+		panel_2.setLayout(new GridLayout(0, 2, 0, 0));
 		
+		lblNewLabel = new JLabel("BOLA ACTUAL:");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblNewLabel.setVerticalAlignment(SwingConstants.BOTTOM);
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_2.add(lblNewLabel);
+
 		lblultimabola = new JLabel("ULTIMA BOLA:");
-		lblultimabola.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblultimabola.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		lblultimabola.setVerticalAlignment(SwingConstants.BOTTOM);
 		lblultimabola.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_2.add(lblultimabola);
 		
+		lblbolaactual = new JLabel("");
+		lblbolaactual.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_2.add(lblbolaactual);
+
 		lblultimabolaimg = new JLabel("");
 		lblultimabolaimg.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_2.add(lblultimabolaimg);
@@ -565,28 +577,28 @@ public class Anfitrion extends JFrame {
 				}while(arrayCeldas[num_aleatorio-1].getText() == null);
 
 				String img_bola = "./BolasBingo/"+num_aleatorio+".png";
-				
+
 				String strarchivo="\\\\192.168.0.28\\almingo\\comprobarnumeros.txt";
-				
+
 				Scanner leerfich;
-				
+
 				File fichero;
-				
+
 				PrintWriter pw;
-				
+
 				fichero=new File(strarchivo);
-				
+
 				try {
-					
+
 					if(fichero.exists()) {
-				        
-				        pw = new PrintWriter(new FileWriter(fichero, true)); 
-				        
-				        pw.print(num_aleatorio + " ");
+
+						pw = new PrintWriter(new FileWriter(fichero, true)); 
+
+						pw.print(num_aleatorio + " ");
 						pw.close();
 					}
-					
-					
+
+
 				} catch (FileNotFoundException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -603,26 +615,72 @@ public class Anfitrion extends JFrame {
 				}
 
 				ImageIcon icono = new ImageIcon(img_bola);
+
 				Image imagen = icono.getImage();
 				Image imagenEscalada = imagen.getScaledInstance(37, 37, Image.SCALE_SMOOTH);
 				ImageIcon iconoFinal = new ImageIcon(imagenEscalada);
+				
+				
 
 				arrayCeldas[num_aleatorio-1].setText(null);
 				arrayCeldas[num_aleatorio-1].setIcon(iconoFinal);
+
+				Image imagenBolaActual = imagen.getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+				ImageIcon iconoActual = new ImageIcon(imagenBolaActual);
+
+
+				try {
+					Scanner scFichero = new Scanner(new File("\\\\192.168.0.28\\almingo\\comprobarnumeros.txt"));
+
+					String numeroAnterior = null;
+					String numeroActual = null;
+
+					String img_bolaAnterior;
+					ImageIcon iconoBolaAnterior;
+
+
+					while (scFichero.hasNext()) {
+						numeroAnterior = numeroActual;  
+						numeroActual = scFichero.next();     
+					}
+
+					img_bolaAnterior = "./BolasBingo/"+numeroAnterior+".png";
+					ImageIcon icono2 = new ImageIcon(img_bolaAnterior);
+
+					Image imagen2 = icono2.getImage();
+					Image imagenEscalada2 = imagen2.getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+					ImageIcon iconoFinal2 = new ImageIcon(imagenEscalada2);
+
+
+					if (numeroAnterior != null) {
+						lblbolaactual.setIcon(iconoActual);
+						lblultimabolaimg.setIcon(iconoFinal2);
+
+					} else {
+						lblultimabolaimg.setIcon(iconoFinal);
+					}
+
+					scFichero.close();
+				} catch (FileNotFoundException e1) {
+					e1.printStackTrace();
+				}
+
+
+
 
 
 
 			}
 		});
-		
+
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e) {
-            	PrintWriter pw;
-            	String strarchivo="\\\\192.168.0.28\\almingo\\comprobarestado.txt";
-            	
-            	try {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				PrintWriter pw;
+				String strarchivo="\\\\192.168.0.28\\almingo\\comprobarestado.txt";
+
+				try {
 					pw = new PrintWriter(new FileWriter(new File(strarchivo)));
 					pw.println("Estado: yes");
 					pw.close();
@@ -630,11 +688,11 @@ public class Anfitrion extends JFrame {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				} 			
-		        
-            	System.exit(0);
-                
-            }
-        });
+
+				System.exit(0);
+
+			}
+		});
 	}
 
 	private void celdas(JLabel []arrayCeldas) {
