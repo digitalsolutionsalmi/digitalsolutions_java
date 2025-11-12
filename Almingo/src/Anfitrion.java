@@ -636,7 +636,6 @@ public class Anfitrion extends JFrame {
 					String numeroActual = null;
 
 					String img_bolaAnterior;
-					ImageIcon iconoBolaAnterior;
 
 
 					while (scFichero.hasNext()) {
@@ -652,13 +651,9 @@ public class Anfitrion extends JFrame {
 					ImageIcon iconoFinal2 = new ImageIcon(imagenEscalada2);
 
 
-					if (numeroAnterior != null) {
 						lblbolaactual.setIcon(iconoActual);
 						lblultimabolaimg.setIcon(iconoFinal2);
 
-					} else {
-						lblultimabolaimg.setIcon(iconoFinal);
-					}
 
 					scFichero.close();
 				} catch (FileNotFoundException e1) {
